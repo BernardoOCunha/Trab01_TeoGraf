@@ -20,7 +20,7 @@ class adjacencyMatrix:
 
 
 
-
+#IMPORTANTE: VER MANUAL DE USO DA CLASSE NO FINAL DO ARQUIVO!!!!
 class Grafo:
 
     def __init__(self, grafo_txt, escolha):
@@ -30,15 +30,6 @@ class Grafo:
         self.matrix = []
         self.nArestas = 0
         self.representacao = escolha 
-        
-        #USUÁRIO ESCOLHE ENTRE MATRIZ (1) E VETOR (2)
-        #while(True):
-        #    escolha = input("Digite 1 para representar o grafo com um Matriz de adjacências ou 2 para representar com um Vetor de adjacências: ")
-        #    if (escolha == "1" or escolha == "2"):
-        #        self.representacao = escolha
-        #        break
-        #    else:
-        #        print("Resposta inválida. Favor digitar somente 1 ou somente 2")
 
         #LEITURA DO ARQUIVO
         with open(grafo_txt, 'r') as file:
@@ -275,6 +266,9 @@ class Grafo:
                 componentes.append((cc, nVerticesCC))
         
         return (nComponentesConexas, componentes)
+    
+#ABAIXO, DEVE-SE POR O CAMINHO PARA O ARQUIVO TXT QUE CONTEM OS GRAFOS ENTRE AS ASPAS COMO PRIMEIRO PARAMETRO. NÂO SE DEVE RETIRAR O r ANTES DAS ASPAS
+#O SEGUNDO PARAMETRO DEVE SER SOMENTE "1" PARA USAR A REPRESENTAÇÂO DE MATRIZ OU "2" PARA USAR O VETOR. AMBOS DEVEM ESTAR ENTRE ASPAS!!!
 
 g = Grafo(r"C:\Users\Bernardo\Documents\ufrj_2021_2\Trab1_TeoGraf\grafo_2.txt", 2)
 x = g.componentesConexas()
